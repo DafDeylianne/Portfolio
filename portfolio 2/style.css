@@ -1,0 +1,865 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Protest+Revolution&family=Roboto+Slab:wght@100;200;300;400&display=swap');
+
+:root {
+    --cor-primaria: white;
+    --cor-segundaria: black;
+    --letra-roboto: 'Roboto Slab';
+    --letra-inter: 'Inter';
+    --letra-montserrat: 'Montserrat';
+    --letra-protest: 'Protest Revolution';
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cor-segundaria);
+}
+
+.inicial {
+    background-image: url(img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 7em;
+    height: 3em;
+    opacity: 0.4;
+    transition: 0.1s ease-in-out;
+    margin: 5px 0 0 10px;
+}
+
+.logo:hover {
+    opacity: 1;
+}
+
+.cabecalho-lista {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.lista {
+    list-style-type: none;
+    font-family: var(--letra-montserrat);
+    font-weight: 100;
+    font-size: 20px;
+    margin: 10px 20px 0 0;
+}
+
+.lista a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.438);
+    padding: 0px 50px 5px 0;
+    position: relative;
+}
+
+.lista a::after {
+    content: " ";
+    width: 0%;
+    height: .5px;
+    background: var(--cor-primaria);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.9s ease-in-out;
+}
+
+.lista a:hover {
+    color: var(--cor-primaria);
+}
+
+.lista a:hover::after {
+    width: 65%;
+}
+
+.apresentacao {
+    margin: 23vw 2vw;
+}
+
+.apresentacao-titulo {
+    color: var(--cor-primaria);
+    font-family: var(--letra-montserrat);
+    font-weight: 100;
+    font-size: 2.5em;
+}
+
+.apresentacao-texto {
+    color: var(--cor-primaria);
+    font-family: var(--letra-montserrat);
+    font-weight: 100;
+    font-size: 18px;
+    margin: 7px 0 20px 5px;
+}
+
+.curriculo {
+    font-family: var(--letra-montserrat);
+    color: var(--cor-primaria);
+    text-decoration: none;
+    border: 1px solid rgba(10, 10, 10, 0.781);
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: 200;
+    background: rgba(0, 0, 0, 0.336);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.curriculo:hover {
+    background-color: rgba(10, 10, 10, 0.781);
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    margin-right: 15px;
+    margin-top: -400px;
+}
+
+.icons i {
+    opacity: 0.3;
+    transition: .2s;
+    margin-bottom: 35px;
+}
+
+.icons i:hover {
+    opacity: 1;
+}
+
+.projetos {
+    height: 70vw;
+    background: var(--cor-segundaria);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.titulo-projetos {
+    color: var(--cor-primaria);
+    font-family: var(--letra-montserrat);
+    font-weight: 100;
+    font-size: 3em;
+    text-align: center;
+    margin: .5em 0 0 0;
+}
+
+.quadrados-projetos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 40px;
+}
+
+.container:hover .flip {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+
+.frente {
+    background-image: url(img/É-possível-fazer-gerenciamento-de-projetos-em-PMEs-2.jpg);
+    background-size: cover;
+}
+
+.tras {
+    background: var(--cor-primaria);
+    transform: rotateY(180deg);
+}
+
+.frente,
+.tras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px var(--cor-primaria);
+    backface-visibility: hidden;
+}
+
+.projeto-titulo {
+    color: var(--cor-segundaria);
+    font-family: var(--letra-montserrat);
+    font-style: 400;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.projeto-texto {
+    color: var(--cor-segundaria);
+    font-family: var(--letra-montserrat);
+    font-style: 100;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.projeto-botao {
+    text-align: center;
+    border: 1px solid rgba(10, 10, 10, 0.781);
+    background: rgb(45, 42, 42);
+    background: rgba(68, 66, 66, 0.781);
+    padding: 10px;
+    border-radius: 10%;
+    margin: 80px 80px;
+    cursor: pointer;
+}
+
+.projeto-botao a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    font-family: var(--letra-montserrat);
+    font-style: 100;
+    font-size: 1em;
+}
+
+.container2 {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 40px;
+}
+
+.container2:hover .flip {
+    transform: rotateY(180deg);
+}
+
+.container3 {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 40px;
+}
+
+.container3:hover .flip {
+    transform: rotateY(180deg);
+}
+
+.container3 {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 40px;
+}
+
+.container3:hover .flip {
+    transform: rotateY(180deg);
+}
+
+.botao-projetos {
+    background: transparent;
+    color: var(--cor-primaria);
+    padding: 20px;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 30% 70% 56% 44% / 48% 46% 54% 52%;
+    margin: 10px 550px;
+    font-family: var(--letra-montserrat);
+}
+
+.sobre-mim {
+    background-image: url(img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sobre-titulo {
+    font-family: var(--letra-montserrat);
+    font-weight: 300;
+    font-size: 50px;
+    color: var(--cor-primaria);
+    margin-top: 50px;
+}
+
+.sobre-texto {
+    font-family: var(--letra-montserrat);
+    font-weight: 300;
+    font-size: 20px;
+    color: var(--cor-segundaria);
+    margin: 60px 40px 0px 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.479);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.botao-projetos {
+    background: transparent;
+    color: var(--cor-primaria);
+    padding: 20px;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 30% 70% 56% 44% / 48% 46% 54% 52%;
+    margin: 10px 550px;
+    font-family: var(--letra-montserrat);
+}
+
+.botao-projetos {
+    background: transparent;
+    color: var(--cor-primaria);
+    padding: 20px;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 30% 70% 56% 44% / 48% 46% 54% 52%;
+    margin: 10px 550px;
+    font-family: var(--letra-montserrat);
+}
+
+.cards {
+    height: 100vh;
+    background-size: cover;
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cards-conhecimentos {
+    margin: 80px 50px 0 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.conhecimentos-titulo {
+    color: var(--cor-primaria);
+    text-align: center;
+    font-size: 40px;
+    font-family: var(--letra-montserrat);
+    font-weight: 100;
+    margin-top: 10px;
+}
+
+.card {
+    border: 1px solid transparent;
+    border-radius: 20px 0 0 0;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.562);
+    padding: 40px;
+    text-align: center;
+    background: rgba(59, 58, 58, 0.349);
+    transition: .2s;
+}
+
+.card:hover {
+    padding: 42px;
+}
+
+.card-texto {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: var(--letra-montserrat);
+}
+
+.rodape p {
+    color: var(--cor-primaria);
+    padding: 10px;
+    font-size: 10px;
+    font-family: var(--letra-montserrat);
+    font-weight: 100;
+    text-align: center;
+}
+
+@media screen and (max-width: 989px) {
+    .cabecalho-lista {
+        gap: 15px;
+    }
+    
+    .lista {
+        font-size: 17px;
+        margin: 10px 10px 0 0;
+    }
+    .apresentacao-titulo {
+        font-size: 1.8em;
+    }
+
+    .icons {
+        margin-top: -250px;
+    }
+
+    .container {
+        width: 200px;
+        height: 200px;
+        margin: 40px;
+    }
+
+    .container2 {
+        width: 200px;
+        height: 200px;
+        margin: 40px;
+    }
+
+    .container3 {
+        width: 200px;
+        height: 200px;
+        margin: 40px;
+    }
+
+    .projeto-titulo {
+        font-size: 20px;
+    }
+    
+    .projeto-texto {
+        font-size: 15px;
+    }
+
+    .projeto-botao {
+        padding: 5px;
+        margin: 60px 70px;
+    }
+
+    .sobre-titulo {
+        font-size: 40px;
+    }
+    
+    .sobre-texto {
+        font-size: 18px;
+        margin: 80px 40px 0px 40px;
+    }
+
+    .conhecimentos-titulo {
+        font-size: 30px;
+        margin-top: 15px;
+    }
+    
+    .card {
+        padding: 35px;
+    }
+
+    .card-texto {
+        font-size: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 839px) {
+    .cabecalho-lista {
+        gap: 10px;
+    }
+    
+    .lista {
+        font-size: 15px;
+        margin: 10px 5px 0 0;
+    }
+
+    .icons {
+        margin-top: -200px;
+    }
+
+    .container {
+        width: 150px;
+        height: 150px;
+        margin: 40px;
+    }
+
+    .container2 {
+        width: 150px;
+        height: 150px;
+        margin: 40px;
+    }
+
+    .container3 {
+        width: 150px;
+        height: 150px;
+        margin: 40px;
+    }
+
+    .projeto-titulo {
+        font-size: 15px;
+    }
+    
+    .projeto-texto {
+        font-size: 12px;
+    }
+
+    .projeto-botao {
+        padding: 5px;
+        margin: 40px 50px;
+    }
+    
+    .sobre-texto {
+        font-size: 16px;
+    }
+
+    .conhecimentos-titulo {
+        font-size: 30px;
+        margin-top: 15px;
+    }
+    
+    .card {
+        padding: 35px;
+    }
+
+    .card-texto {
+        font-size: 11px;
+    }
+    
+}
+
+@media screen and (max-width: 750px) {
+    .card {
+        padding: 22px;
+    }
+
+    .card-texto {
+        font-size: 10px;
+    }
+    .projeto-titulo {
+        color: var(--cor-segundaria);
+        font-family: var(--letra-montserrat);
+        font-style: 400;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 689px) {
+    .icons {
+        margin-top: -100px;
+    }
+    .container {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+    .container2 {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+    .container3 {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 623px) {
+    .lista {
+        display: none;
+    }
+
+    .apresentacao-titulo {
+        font-size: 2em;
+    }
+    
+    .apresentacao-texto {
+        font-size: 1em;
+    }
+    
+    .curriculo {
+        padding: 8px;
+        border-radius: 8px;
+        font-size: .8em;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: flex-end;
+        margin-top: 212px;
+        gap: 20px;
+    }
+    
+    .titulo-projetos {
+        font-size: 2em;
+    }
+
+    .container {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+    .container2 {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+    .container3 {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+
+    .sobre-titulo {
+        font-size: 2em;
+    }
+    
+    .sobre-texto {
+        font-size: 15px;
+    }
+
+    .conhecimentos-titulo {
+        font-size: 2em;
+    }
+
+    .cards-conhecimentos {
+        margin: 50px 20px 0 20px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+
+    .card:hover {
+        padding: 16px;
+    }
+    
+    .card-texto {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 441px) {
+    .lista {
+        display: none;
+    }
+
+    .apresentacao-titulo {
+        font-size: 1.7em;
+    }
+    
+    .apresentacao-texto {
+        font-size: .8em;
+    }
+    
+    .curriculo {
+        padding: 8px;
+        border-radius: 8px;
+        font-size: .6em;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: flex-end;
+        margin-top: 255px;
+        gap: 20px;
+    }
+    
+    .titulo-projetos {
+        font-size: 1.6em;
+    }
+
+    .projeto-titulo {
+        font-size: 15px;
+    }
+    
+    .projeto-texto {
+        font-size: 12px;
+    }
+    
+    .projeto-botao {
+        padding: 7px;
+        margin: 30px 40px;
+        font-size: 12px;
+    }
+
+    .sobre-titulo {
+        font-size: 30px;
+        margin-top: 30px;
+    }
+    
+    .sobre-texto {
+        font-size: 15px;
+        margin: 40px 40px 0px 40px;
+    }
+}
+
+@media screen and (max-width: 397px) {
+    .lista {
+        display: none;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: flex-end;
+        margin-top: 270px;
+        gap: 20px;
+    }
+
+    .container {
+        width: 120px;
+        height: 120px;
+        margin: 15px;
+    }
+    .container2 {
+        width: 120px;
+        height: 120px;
+        margin: 15px;
+    }
+    .container3 {
+        width: 120px;
+        height: 120px;
+        margin: 15px;
+    }
+    
+    .titulo-projetos {
+        font-size: 1.6em;
+    }
+
+    .projeto-titulo {
+        font-size: 15px;
+    }
+    
+    .projeto-texto {
+        font-size: 12px;
+    }
+    
+    .projeto-botao {
+        padding: 7px;
+        margin: 8px 40px;
+        font-size: 7px;
+    }
+
+    .sobre-titulo {
+        font-size: 30px;
+        margin-top: 30px;
+    }
+    
+    .sobre-texto {
+        font-size: 15px;
+        margin: 40px 40px 0px 40px;
+    }
+
+    .cards-conhecimentos {
+        margin: 50px 20px 0 20px;
+    }
+    
+    .card {
+        padding: 12px;
+    }
+
+    .card:hover {
+        padding: 13px;
+    }
+    
+    .card-texto {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 397px) {
+    .sobre-titulo {
+        font-size: 1.6em;
+    }
+
+    .sobre-texto {
+        font-size: .8em;
+        margin: 30px 40px 0px 40px;
+    }
+
+    .conhecimentos-titulo {
+        font-size: 20px;
+    }
+    
+    .card {
+        padding: 13px;
+    }
+    
+    .card:hover {
+        padding: 14px;
+    }
+    
+    .card-texto {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 347px) {
+    .sobre-titulo {
+        font-size: 1.6em;
+    }
+
+    .sobre-texto {
+        font-size: .8em;
+        margin: 30px 40px 0px 40px;
+    }
+
+    .conhecimentos-titulo {
+        font-size: 20px;
+    }
+    
+    .card {
+        padding: 9px;
+    }
+    
+    .card:hover {
+        padding: 10px;
+    }
+    
+    .card-texto {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 323px) {
+    .sobre-titulo {
+        font-size: 1.6em;
+    }
+
+    .sobre-texto {
+        font-size: .8em;
+        margin: 30px 40px 0px 40px;
+    }
+
+    .conhecimentos-titulo {
+        font-size: 20px;
+    }
+    
+    .card {
+        padding: 7px;
+    }
+    
+    .card:hover {
+        padding: 8px;
+    }
+    
+    .card-texto {
+        font-size: 7px;
+    }
+}
